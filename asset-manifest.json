@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/test-task-campers/static/css/main.7acaea2f.css",
+    "main.js": "/test-task-campers/static/js/main.1c37b54a.js",
+    "index.html": "/test-task-campers/index.html",
+    "main.7acaea2f.css.map": "/test-task-campers/static/css/main.7acaea2f.css.map",
+    "main.1c37b54a.js.map": "/test-task-campers/static/js/main.1c37b54a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.1c37b54a.js"
+  ]
+}
