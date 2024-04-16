@@ -1,7 +1,7 @@
 import { lazy } from 'react';
-import { Route, Routes } from 'react-router-dom';
-// import { ToastContainer } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import AppBar from './components/AppBar/AppBar';
 import './App.css';
 
@@ -18,11 +18,6 @@ const FavoritesPage = lazy(() =>
     './pages/FavoritesPage/FavoritesPage.jsx' /* webpackChunkName: "movie-details-page" */
   )
 );
-const NotFoundPage = lazy(() =>
-  import(
-    './pages/NotFoundPage/NotFoundPage.jsx' /* webpackChunkName: "not-found-page" */
-  )
-);
 
 function App() {
   return (
@@ -33,9 +28,9 @@ function App() {
           <Route path="/catalog" element={<CatalogPage />} />
           <Route path="/favorites" element={<FavoritesPage />} />
         </Route>
-        <Route path="*" element={<NotFoundPage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-      {/* <ToastContainer /> */}
+      <ToastContainer />
     </>
   );
 }
