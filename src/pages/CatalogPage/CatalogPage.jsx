@@ -4,7 +4,7 @@ import { fetchAdverts } from 'service/adverts-api';
 import { errorMessage } from 'service/toast';
 import LoaderSpin from 'components/Loader/LoaderSpin';
 import InfoMessage from 'components/InfoMessage/InfoMessage';
-import AdvertsList from 'AdvertsList/AdvertsList';
+import AdvertsList from 'components/AdvertsList/AdvertsList';
 
 const CatalogPage = () => {
   const [adverts, setAdverts] = useState([]);
