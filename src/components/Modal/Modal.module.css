@@ -2,8 +2,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: var(--backdrop);
 }
 
@@ -14,43 +14,66 @@
   cursor: pointer;
 }
 
-.content {
-  position: absolute;
+.modal {
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 902px;
-  max-height: 80%;
-  padding: 40px;
+  width: 982px;
+  height: 80%;
+  padding-bottom: 40px;
   border-radius: 20px;
   background-color: var(--white-color);
 }
 
-.headlineWrapper {
-  margin-bottom: 10px;
-}
-
-.ratingWrapper {
-  margin-bottom: 16px;
-}
-
-.priceWrapper {
+.headerContentWrapper {
+  padding: 40px 40px 0 40px;
   margin-bottom: 24px;
 }
 
+.ratingWrapper {
+  margin-top: 10px;
+  margin-bottom: 16px;
+}
+
+.mainContentWrapper {
+  width: 966px;
+  height: 466px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0 24px 40px 40px;
+}
+
+/* Scrollbar styles */
+.mainContentWrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+.mainContentWrapper::-webkit-scrollbar-track {
+  background: none;
+}
+
+.mainContentWrapper::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-color);
+  border-radius: 7px;
+}
+
 .list {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  gap: 16px;
+  width: 902px;
   margin-bottom: 24px;
 }
 
 .image {
-  max-width: 290px;
+  display: inline-block;
+  width: 290px;
   height: 310px;
+  margin-right: 16px;
   object-fit: cover;
   border-radius: 10px;
+}
+
+.image:last-child {
+  margin-right: 0;
 }
 
 .description {
@@ -60,37 +83,3 @@
   margin-bottom: 44px;
 }
 
-.buttonsWrapper {
-  display: flex;
-  gap: 40px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid var(--border-tile);
-}
-
-.button {
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 1.2;
-  /* transition: color; */
-}
-
-/* .button:hover,
-.button:focus {
-  border-bottom: 5px solid var(--red-color);
-} */
-
-.button::after {
-  position: absolute;
-  bottom: -4px;
-  left: 40px;
-  content: '';
-  width: 0;
-  height: 5px;
-  background-color: var(--red-color);
-  /* transition: width, left; */
-}
-
-.button:hover::after {
-  width: 37px;
-  left: 0;
-}

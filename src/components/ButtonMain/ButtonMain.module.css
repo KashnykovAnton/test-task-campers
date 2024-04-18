@@ -9,3 +9,8 @@
   letter-spacing: -0.005em;
   color: var(--white-color);
 }
+
+.formButton {
+  width: 160px;
+  margin-right: auto;
+}

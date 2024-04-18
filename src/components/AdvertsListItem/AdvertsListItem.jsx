@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import ButtonShowMore from 'components/ButtonShowMore/ButtonShowMore';
 import FeatureBadge from 'components/FeatureBadge/FeatureBadge';
 import styles from './AdvertsListItem.module.css';
 import Icons from '../../assets/icons-sprite.svg';
@@ -7,6 +6,7 @@ import Modal from 'components/Modal/Modal';
 import Headline from 'components/Headline/Headline';
 import Price from 'components/Price/Price';
 import Rating from 'components/Rating/Rating';
+import ButtonMain from 'components/ButtonMain/ButtonMain';
 
 const AdvertsListItem = ({ data }) => {
   const [showModal, setShowModal] = useState(false);
@@ -16,6 +16,9 @@ const AdvertsListItem = ({ data }) => {
 
   const toggleModal = () => {
     setShowModal(prevState => !prevState);
+    showModal
+      ? document.body.classList.remove(styles.modalOpen)
+      : document.body.classList.add(styles.modalOpen);
   };
 
   return (
@@ -53,7 +56,7 @@ const AdvertsListItem = ({ data }) => {
               toggleModal();
             }}
           >
-            <ButtonShowMore />
+            <ButtonMain text="Show more" />
           </div>
         </div>
       </li>

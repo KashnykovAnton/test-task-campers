@@ -11,6 +11,10 @@
   margin-bottom: 32px;
 }
 
+.modalOpen {
+  overflow: hidden;
+}
+
 .imageWrapper {
   overflow: hidden;
 }
