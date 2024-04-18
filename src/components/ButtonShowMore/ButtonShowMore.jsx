@@ -4,7 +4,7 @@ import styles from './ButtonShowMore.module.css';
 const ButtonShowMore = () => {
   return (
     <button type="button" className={styles.button}>
-      "Show more"
+      Show more
     </button>
   );
 };

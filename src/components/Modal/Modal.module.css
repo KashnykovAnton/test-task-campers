@@ -1,0 +1,96 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--backdrop);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  cursor: pointer;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 902px;
+  max-height: 80%;
+  padding: 40px;
+  border-radius: 20px;
+  background-color: var(--white-color);
+}
+
+.headlineWrapper {
+  margin-bottom: 10px;
+}
+
+.ratingWrapper {
+  margin-bottom: 16px;
+}
+
+.priceWrapper {
+  margin-bottom: 24px;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.image {
+  max-width: 290px;
+  height: 310px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--gray-color);
+  margin-bottom: 44px;
+}
+
+.buttonsWrapper {
+  display: flex;
+  gap: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-tile);
+}
+
+.button {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  /* transition: color; */
+}
+
+/* .button:hover,
+.button:focus {
+  border-bottom: 5px solid var(--red-color);
+} */
+
+.button::after {
+  position: absolute;
+  bottom: -4px;
+  left: 40px;
+  content: '';
+  width: 0;
+  height: 5px;
+  background-color: var(--red-color);
+  /* transition: width, left; */
+}
+
+.button:hover::after {
+  width: 37px;
+  left: 0;
+}
