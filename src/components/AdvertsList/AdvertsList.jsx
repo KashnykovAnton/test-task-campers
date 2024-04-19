@@ -7,7 +7,7 @@ const AdvertsList = ({ adverts }) => {
   return (
     <ul className={styles.list}>
       {adverts.map(item => {
-        return <AdvertsListItem key={item.id} data={item} />;
+        return <AdvertsListItem key={item._id} data={item} />;
       })}
     </ul>
   );

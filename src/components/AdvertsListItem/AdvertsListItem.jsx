@@ -34,7 +34,7 @@ const AdvertsListItem = ({ data }) => {
               <div className={styles.priceWrapper}>
                 <Price price={data.price} />
                 <button type="button">
-                  <svg className={styles.icon} width="24" height="24">
+                  <svg width="24" height="24">
                     <use href={`${Icons}#heart`}></use>
                   </svg>
                 </button>

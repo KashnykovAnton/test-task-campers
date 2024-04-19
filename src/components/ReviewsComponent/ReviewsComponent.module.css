@@ -1,0 +1,30 @@
+.reviewsWrapper {
+  width: 430px;
+}
+
+.nameWrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  color: var(--red-color);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.25;
+  background-color: var(--background-gray-color);
+  border-radius: 50%;
+}
+
+.name {
+  color: var(--dark-color);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.33;
+}

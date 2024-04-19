@@ -34,17 +34,17 @@ const Modal = ({ onClose, data }) => {
     <div className={styles.backdrop} onClick={handleBackdropClick}>
       <div className={styles.modal}>
         <div className={styles.headerContentWrapper}>
-            <Headline headline={data.name} />
-            <div
-              className={styles.closeBtn}
-              onClick={() => {
-                onClose();
-              }}
-            >
-              <svg width="32" height="32">
-                <use href={`${Icons}#close`}></use>
-              </svg>
-            </div>
+          <Headline headline={data.name} />
+          <div
+            className={styles.closeBtn}
+            onClick={() => {
+              onClose();
+            }}
+          >
+            <svg width="32" height="32">
+              <use href={`${Icons}#close`}></use>
+            </svg>
+          </div>
           <div className={styles.ratingWrapper}>
             <Rating reviews={data.reviews} location={data.location} />
           </div>
@@ -52,12 +52,12 @@ const Modal = ({ onClose, data }) => {
         </div>
         <div className={styles.mainContentWrapper}>
           <ul className={styles.list}>
-            {data.gallery.map(link => (
-              <img className={styles.image} src={link} alt="camper" />
+            {data.gallery.map((link, idx) => (
+              <img className={styles.image} key={idx} src={link} alt="camper" />
             ))}
           </ul>
           <p className={styles.description}>{data.description}</p>
-          <ModalInfoSection/>
+          <ModalInfoSection data={data}/>
         </div>
       </div>
     </div>,

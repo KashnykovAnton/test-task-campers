@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import styles from './FormComponent.module.css';
 import ButtonMain from 'components/ButtonMain/ButtonMain';
+import CalendarComponent from 'components/CalendarComponent/CalendarComponent';
 
 const FormComponent = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [bookingDate, setBookingDate] = useState('');
   const [comment, setComment] = useState('');
-
-  //   const [formSubmitted, setFormSubmitted] = useState(false);
 
   const handleInputChange = e => {
     const { name, value } = e.target;
@@ -43,7 +42,6 @@ const FormComponent = () => {
       setEmail('');
       setBookingDate('');
       setComment('');
-      //   setFormSubmitted(true);
     } else {
       alert('Please fill in all required fields.');
     }
@@ -72,14 +70,7 @@ const FormComponent = () => {
           required
           placeholder="Email"
         />
-        <input
-          type="date"
-          name="bookingDate"
-          value={bookingDate}
-          onChange={handleInputChange}
-          required
-        />
-        {/* <button type="button">Calendar</button> */}
+        <CalendarComponent setDate={setBookingDate} date={bookingDate}/>
         <textarea
           name="comment"
           value={comment}

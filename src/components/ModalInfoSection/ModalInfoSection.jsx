@@ -4,7 +4,7 @@ import FeaturesComponent from 'components/FeaturesComponent/FeaturesComponent';
 import ReviewsComponent from 'components/ReviewsComponent/ReviewsComponent';
 import FormComponent from 'components/FormComponent/FormComponent';
 
-const ModalInfoSection = () => {
+const ModalInfoSection = ({data}) => {
   const [activeButton, setActiveButton] = useState('features');
 
   const handleButtonClick = buttonId => {
@@ -35,10 +35,10 @@ const ModalInfoSection = () => {
         {activeButton === 'features' ? (
           <FeaturesComponent />
         ) : (
-          <ReviewsComponent />
+          <ReviewsComponent reviews={data.reviews}/>
         )}
-      </div>
       <FormComponent />
+      </div>
     </div>
   );
 };
