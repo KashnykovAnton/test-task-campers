@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunktest_task_campers=self.webpackChunktest_task_campers||[]).push([[347],{5700:(e,s,t)=>{t.d(s,{Z:()=>c});const a="Container_container__VVOCq";var r=t(184);const c=e=>{let{children:s}=e;return(0,r.jsx)("div",{className:a,children:s})}},4413:(e,s,t)=>{t.r(s),t.d(s,{default:()=>c});t(2791);var a=t(5700),r=t(184);const c=()=>(0,r.jsx)(a.Z,{children:(0,r.jsx)("div",{children:"FavoritesPage"})})}}]);
+//# sourceMappingURL=movie-details-page.8f024866.chunk.js.map
