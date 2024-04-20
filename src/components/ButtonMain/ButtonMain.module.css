@@ -5,12 +5,36 @@
   background-color: var(--red-color);
   font-size: 16px;
   font-weight: 500;
-  line-height: 24px;
+  line-height: 1.5;
   letter-spacing: -0.005em;
   color: var(--white-color);
+}
+
+.button:hover,
+button:focus {
+  background-color: var(--red-color-hover);
 }
 
 .formButton {
   width: 160px;
   margin-right: auto;
+}
+
+.loadMoreButton {
+  margin: auto;
+  letter-spacing: -0.08px;
+  color: var(--dark-color);
+  background-color: transparent;
+  border-radius: 200px;
+  border: 1px solid var(--border-button);
+}
+
+.loadMoreButton:hover,
+.loadMoreButton:focus {
+  background-color: transparent;
+  border: 1px solid var(--red-color);
+}
+
+.searchButton {
+  padding: 16px 60px;
 }

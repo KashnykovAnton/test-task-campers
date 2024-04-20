@@ -1,0 +1,10 @@
+.adertsListWrapper {
+    display: grid;
+}
+
+.list {
+  display: flex;
+  gap: 32px;
+  flex-direction: column;
+  margin-bottom: 50px;
+}

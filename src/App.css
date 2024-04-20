@@ -2,6 +2,7 @@
   --dark-color: #101828;
   --gray-color: #475467;
   --red-color: #e44848;
+  --red-color-hover: #d84343;
   --yellow-color: #ffc531;
   --light-gray-color: #f2f4f7;
   --light-color: #f7f7f7;
@@ -11,4 +12,5 @@
   --backdrop: #11121366;
   --scrollbar-color: #d9d9d9;
   --background-gray-color: #f2f4f7;
+  --border-filter: #1018281a;
 }

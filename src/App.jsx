@@ -10,12 +10,12 @@ const HomePage = lazy(() =>
 );
 const CatalogPage = lazy(() =>
   import(
-    './pages/CatalogPage/CatalogPage.jsx' /* webpackChunkName: "movies-page" */
+    './pages/CatalogPage/CatalogPage.jsx' /* webpackChunkName: "catalog-page" */
   )
 );
 const FavoritesPage = lazy(() =>
   import(
-    './pages/FavoritesPage/FavoritesPage.jsx' /* webpackChunkName: "movie-details-page" */
+    './pages/FavoritesPage/FavoritesPage.jsx' /* webpackChunkName: "favorites-page" */
   )
 );
 

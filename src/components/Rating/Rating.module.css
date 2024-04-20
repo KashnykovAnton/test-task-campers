@@ -1,24 +1,13 @@
 .info {
   display: flex;
   align-items: center;
-  gap: 16px;
   flex-direction: row;
   flex-wrap: wrap;
   font-size: 16px;
   line-height: 1.5;
 }
 
-.centerWrapper {
-  display: flex;
-  align-items: center;
-}
-
-.iconWrapper {
-  display: flex;
-  align-items: center;
-  margin-right: 4px;
-}
-
 .ratingText {
+  margin-right: 16px;
   text-decoration-line: underline;
 }

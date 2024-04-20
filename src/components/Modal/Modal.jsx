@@ -6,6 +6,8 @@ import Headline from 'components/Headline/Headline';
 import Rating from 'components/Rating/Rating';
 import Price from 'components/Price/Price';
 import ModalInfoSection from 'components/ModalInfoSection/ModalInfoSection';
+import GalleryList from 'components/GalleryList/GalleryList';
+import TextComponent from 'components/TextComponent/TextComponent';
 
 const modalRoot = document.querySelector('#modal-root');
 
@@ -51,12 +53,8 @@ const Modal = ({ onClose, data }) => {
           <Price price={data.price} />
         </div>
         <div className={styles.mainContentWrapper}>
-          <ul className={styles.list}>
-            {data.gallery.map((link, idx) => (
-              <img className={styles.image} key={idx} src={link} alt="camper" />
-            ))}
-          </ul>
-          <p className={styles.description}>{data.description}</p>
+          <GalleryList gallery={data.gallery} name={data.name}/>
+          <TextComponent text={data.description} customStyle='fullDescription'/>
           <ModalInfoSection data={data}/>
         </div>
       </div>

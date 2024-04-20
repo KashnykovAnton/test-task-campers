@@ -1,0 +1,49 @@
+.filterSection {
+  width: 360px;
+}
+
+.wrapper {
+  margin-bottom: 32px;
+}
+
+.filterText {
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--border-tile);
+}
+
+.location {
+  padding: 18px;
+  width: 360px;
+  height: 56px;
+  border-radius: 10px;
+  background: var(--light-color);
+}
+
+.filterTextWithMargin {
+  margin-bottom: 14px;
+}
+
+.filterHeadline {
+  position: relative;
+  margin-bottom: 48px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.filterHeadline::after {
+  content: '';
+  position: absolute;
+  bottom: -24px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--border-filter);
+}
+
+.lastWrapper {
+  margin-bottom: 64px;
+}

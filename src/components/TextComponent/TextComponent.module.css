@@ -1,0 +1,19 @@
+.mainStyle {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--gray-color);
+}
+
+.fullDescription {
+  margin-bottom: 44px;
+}
+
+.shortDescription {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.formText {
+  margin-bottom: 24px;
+}

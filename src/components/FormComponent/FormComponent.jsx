@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from './FormComponent.module.css';
 import ButtonMain from 'components/ButtonMain/ButtonMain';
 import CalendarComponent from 'components/CalendarComponent/CalendarComponent';
+import TextComponent from 'components/TextComponent/TextComponent';
 
 const FormComponent = () => {
   const [name, setName] = useState('');
@@ -47,12 +48,12 @@ const FormComponent = () => {
     }
   };
 
+  const formText = 'Stay connected! We are always ready to help you.';
+
   return (
     <div className={styles.form}>
       <h3 className={styles.title}>Book your campervan now</h3>
-      <p className={styles.text}>
-        Stay connected! We are always ready to help you.
-      </p>
+      <TextComponent text={formText} customStyle='formText'/>
       <form onSubmit={handleSubmit}>
         <input
           type="text"

@@ -1,5 +1,6 @@
 import React from 'react';
-import Icons from '../../assets/icons-sprite.svg';
+import IconStar from 'components/IconStar/IconStar';
+import Location from 'components/Location/Location';
 import styles from './Rating.module.css';
 
 const Rating = ({ reviews, location }) => {
@@ -8,31 +9,16 @@ const Rating = ({ reviews, location }) => {
       (acc, review) => acc + review.reviewer_rating,
       0
     );
-    return rating / reviews.length;
+    return Math.floor((rating / reviews.length) * 10) / 10;
   };
-
-  const reverseLocation = location.split(', ').reverse().join(', ');
 
   return (
     <div className={styles.info}>
-      <div className={styles.centerWrapper}>
-        <span className={styles.iconWrapper}>
-          <svg width="16" height="16">
-            <use href={`${Icons}#star`}></use>
-          </svg>
-        </span>
-        <span className={styles.ratingText}>
-          {averageRating()}({reviews.length} Reviews)
-        </span>
-      </div>
-      <div className={styles.centerWrapper}>
-        <span className={styles.iconWrapper}>
-          <svg width="18" height="20">
-            <use href={`${Icons}#map-pin`}></use>
-          </svg>
-        </span>
-        <span>{reverseLocation}</span>
-      </div>
+      <IconStar />
+      <span className={styles.ratingText}>
+        {averageRating()}({reviews.length} Reviews)
+      </span>
+      <Location location={location} size='small'/>
     </div>
   );
 };

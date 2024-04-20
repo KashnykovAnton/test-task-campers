@@ -3,8 +3,8 @@ import Container from 'components/Container/Container';
 import { fetchAdverts } from 'service/adverts-api';
 import { errorMessage } from 'service/toast';
 import LoaderSpin from 'components/Loader/LoaderSpin';
-import InfoMessage from 'components/InfoMessage/InfoMessage';
 import AdvertsList from 'components/AdvertsList/AdvertsList';
+import Filter from 'components/Filter/Filter';
 
 const CatalogPage = () => {
   const [adverts, setAdverts] = useState([]);
@@ -29,11 +29,8 @@ const CatalogPage = () => {
   }, []);
   return (
     <Container>
-      {adverts.length !== 0 ? (
-        <AdvertsList adverts={adverts} />
-      ) : (
-        <InfoMessage />
-      )}
+      <Filter/>
+      <AdvertsList adverts={adverts} />
       {isLoading && <LoaderSpin />}
     </Container>
   );

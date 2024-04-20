@@ -1,35 +1,21 @@
 import React from 'react';
 import styles from './ReviewsComponent.module.css';
-import { Icons } from 'react-toastify';
-import RatingStars from 'components/RatingStars/RatingStars';
+import IconStarList from 'components/IconStarList/IconStarList';
+import TextComponent from 'components/TextComponent/TextComponent';
 
 const ReviewsComponent = ({ reviews }) => {
-  const renderRating = () => {
-    let i = 0
-    while (i < 5) {
-      // выводит 0, затем 1, затем 2
-      <svg width="24" height="24">
-        <use href={`${Icons}#star`}></use>
-      </svg>;
-      i++;
-    }
-  };
-
   return (
-    <div className={styles.reviewsWrapper}>
+    <div className={styles.reviewsSection}>
       {reviews.map(review => (
-        <div key={Math.floor(Math.random() * 100)}>
-          <div className={styles.nameWrapper}>
+        <div key={Math.floor(Math.random() * 100)} className={styles.reviewWrapper}>
+          <div className={styles.headerWrapper}>
             <div className={styles.avatar}>{review.reviewer_name[0]}</div>
             <div>
               <h3 className={styles.name}>{review.reviewer_name}</h3>
-              <RatingStars rating={review.reviewer_rating}/>
-              <div>{renderRating()}</div>
-              {/* <span>{review.reviewer_rating}</span> */}
+              <IconStarList rating={review.reviewer_rating} />
             </div>
           </div>
-
-          <p>{review.comment}</p>
+          <TextComponent text={review.comment}/>
         </div>
       ))}
     </div>

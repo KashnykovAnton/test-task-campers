@@ -33,7 +33,7 @@ const ModalInfoSection = ({data}) => {
 
       <div className={styles.content}>
         {activeButton === 'features' ? (
-          <FeaturesComponent />
+          <FeaturesComponent data={data}/>
         ) : (
           <ReviewsComponent reviews={data.reviews}/>
         )}

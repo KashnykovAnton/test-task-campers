@@ -17,6 +17,15 @@
   background: var(--white-color);
 }
 
+.react-datepicker-popper[data-placement^='bottom'] .react-datepicker__triangle {
+  color: var(--white-color);
+  fill: var(--white-color);
+}
+
+.react-datepicker-popper .react-datepicker__triangle {
+  stroke: var(--border-tile);
+}
+
 .react-datepicker__month-container {
   width: 293px;
   height: 241px;
@@ -42,7 +51,6 @@
 .react-datepicker__navigation-icon--next::before {
   left: -18px;
 }
-
 
 .react-datepicker__navigation-icon--previous::before {
   right: -18px;

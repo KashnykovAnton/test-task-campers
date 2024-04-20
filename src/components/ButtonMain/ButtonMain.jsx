@@ -3,12 +3,14 @@ import styles from './ButtonMain.module.css';
 
 const ButtonMain = ({ text, actionType = 'button', className }) => {
   return (
-    <button
+
+      <button
       type={actionType}
       className={`${styles.button} ${styles[className]}`}
     >
       {text}
     </button>
+
   );
 };
 
