@@ -1,7 +1,7 @@
 import React from 'react';
 import Headline from 'components/Headline/Headline';
 import Price from 'components/Price/Price';
-import Rating from 'components/Rating/Rating';
+import Rating from 'components/ModalRatingAndLocation/ModalRatingAndLocation';
 import styles from './AdvertsHeader.module.css';
 import FavoriteButton from 'components/FavoriteButton/FavoriteButton';
 

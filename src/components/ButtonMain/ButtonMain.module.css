@@ -21,7 +21,6 @@ button:focus {
 }
 
 .loadMoreButton {
-  margin: auto;
   letter-spacing: -0.08px;
   color: var(--dark-color);
   background-color: transparent;

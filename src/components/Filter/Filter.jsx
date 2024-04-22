@@ -1,5 +1,5 @@
 import React from 'react';
-import Location from 'components/Location/Location';
+import Geolocation from 'components/Geolocation/Geolocation';
 import styles from './Filter.module.css';
 import FilterBadgeList from 'components/FilterBadgeList/FilterBadgeList';
 import ButtonMain from 'components/ButtonMain/ButtonMain';
@@ -24,7 +24,7 @@ const Filter = () => {
       <div className={styles.wrapper}>
         <p className={styles.filterText}>Location</p>
         <div className={styles.location}>
-          <Location location="Ukraine, Kiev" />
+          <Geolocation/>
         </div>
       </div>
       <div className={styles.wrapper}>

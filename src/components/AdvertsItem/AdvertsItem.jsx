@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Modal from 'components/Modal/Modal';
+import AdvertModal from 'components/AdvertModal/AdvertModal';
 import ButtonMain from 'components/ButtonMain/ButtonMain';
 import GalleryItem from 'components/GalleryItem/GalleryItem';
 import AdvertsHeader from 'components/AdvertsHeader/AdvertsHeader';
@@ -51,7 +51,7 @@ const AdvertsListItem = ({ data }) => {
           </div>
         </div>
       </li>
-      {showModal && <Modal onClose={toggleModal} data={data} />}
+      {showModal && <AdvertModal onClose={toggleModal} data={data} />}
     </div>
   );
 };

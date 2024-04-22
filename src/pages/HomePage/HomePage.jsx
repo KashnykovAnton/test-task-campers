@@ -1,10 +1,8 @@
 import React from 'react';
-import Container from 'components/Container/Container';
+import HeroComponent from 'components/HeroComponent/HeroComponent';
 
 const HomePage = () => {
-  return <Container>
-    <div>HomePage</div>
-  </Container>;
+  return <HeroComponent />;
 };
 
 export default HomePage;

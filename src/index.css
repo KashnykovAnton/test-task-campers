@@ -44,6 +44,10 @@ button {
   cursor: pointer;
 }
 
+button:hover, button:focus {
+ background-color: transparent;
+}
+
 img {
   display: block;
   max-width: 100%;

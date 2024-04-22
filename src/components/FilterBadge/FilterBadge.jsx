@@ -9,13 +9,13 @@ const FilterBadge = ({ badgeKey, badgeValue, camper = false }) => {
   return (
     <>
       {renderAcCondition && (
-        <div className={styles.badge}>
+        <button className={styles.badge}>
           <img className={styles.image} src={Icon} alt="AC-icon" />
           <p>{badgeValue}</p>
-        </div>
+        </button>
       )}
       {!renderAcCondition && (
-        <div className={styles.badge}>
+        <button className={styles.badge}>
           <svg
             className={styles.icon}
             width={camper ? 40 : 32}
@@ -24,7 +24,7 @@ const FilterBadge = ({ badgeKey, badgeValue, camper = false }) => {
             <use href={`${Icons}#${badgeKey}-big`}></use>
           </svg>
           <p className={styles.stringValue}>{badgeValue}</p>
-        </div>
+        </button>
       )}
     </>
   );

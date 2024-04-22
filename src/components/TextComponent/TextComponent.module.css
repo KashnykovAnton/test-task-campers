@@ -17,3 +17,9 @@
 .formText {
   margin-bottom: 24px;
 }
+
+.heroText {
+  width: 300px;
+  margin: 36px 0;
+  font-size: 24px;
+}

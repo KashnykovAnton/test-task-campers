@@ -35,10 +35,7 @@ const FeaturesComponent = ({ data }) => {
         <h3 className={styles.detailsHeadline}>Vehicle details</h3>
         <ul className={styles.detailsList}>
           {detailsArray.map(([key, value], idx) => (
-            <li
-              key={Math.floor(Math.random() * 100)}
-              className={styles.detailsStroke}
-            >
+            <li key={idx} className={styles.detailsStroke}>
               <p className={styles.detailsName}>{key}</p>
               <p className={idx === 0 ? styles.detailsName : ''}>
                 {formattedValue(value, idx)}

@@ -1,5 +1,6 @@
 .adertsListWrapper {
     display: grid;
+    margin-bottom: 50px;
 }
 
 .list {
@@ -7,4 +8,10 @@
   gap: 32px;
   flex-direction: column;
   margin-bottom: 50px;
+}
+
+.buttonWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

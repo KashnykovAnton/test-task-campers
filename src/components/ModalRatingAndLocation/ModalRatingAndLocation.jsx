@@ -1,9 +1,9 @@
 import React from 'react';
 import IconStar from 'components/IconStar/IconStar';
 import Location from 'components/Location/Location';
-import styles from './Rating.module.css';
+import styles from './ModalRatingAndLocation.module.css';
 
-const Rating = ({ reviews, location }) => {
+const ModalRatingAndLocation = ({ reviews, location }) => {
   const averageRating = () => {
     const rating = reviews.reduce(
       (acc, review) => acc + review.reviewer_rating,
@@ -23,4 +23,4 @@ const Rating = ({ reviews, location }) => {
   );
 };
 
-export default Rating;
+export default ModalRatingAndLocation;

@@ -13,3 +13,9 @@
   border-radius: 10px;
   border: 1px solid var(--border-tile);
 }
+
+.badge:hover,
+.badge:focus {
+  background-color: transparent;
+  border-color: var(--red-color);
+}

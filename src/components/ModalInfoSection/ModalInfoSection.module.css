@@ -22,6 +22,10 @@
     font-weight: 600;
     line-height: 1.2;
   }
+
+  .button:hover, .button:focus {
+    background-color: transparent;
+  }
   
   .button.active::after {
     position: absolute;
