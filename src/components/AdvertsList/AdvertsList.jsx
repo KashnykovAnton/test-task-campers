@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import styles from './AdvertsList.module.css';
 import ButtonMain from 'components/ButtonMain/ButtonMain';
-// import LoaderSpin from 'components/Loader/LoaderSpin';
+import LoaderSpin from 'components/Loader/LoaderSpin';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   getAdverts,
