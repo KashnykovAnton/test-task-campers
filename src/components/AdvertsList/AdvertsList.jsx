@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import AdvertsListItem from 'components/AdvertsItem/AdvertsItem';
 import styles from './AdvertsList.module.css';
 import ButtonMain from 'components/ButtonMain/ButtonMain';
-// import LoaderSpin from 'components/Loader/LoaderSpin';
+import LoaderSpin from 'components/Loader/LoaderSpin';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAdverts } from 'store/adverts/adverts-selectors';
 import { fetchAdvertsFromApi } from 'store/adverts/adverts-thunk';
 
 const AdvertsList = () => {
   const [page, setPage] = useState(1);
-  // const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const dispatch = useDispatch();
   const adverts = useSelector(getAdverts);
@@ -37,7 +37,7 @@ const AdvertsList = () => {
           <ButtonMain text="Load more" className="loadMoreButton" />
         </div>
       )}
-     {/* {isLoading && <LoaderSpin />} */}
+     {isLoading && <LoaderSpin />}
     </div>
   );
 };
