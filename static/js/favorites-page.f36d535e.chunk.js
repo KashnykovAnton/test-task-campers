@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunktest_task_campers=self.webpackChunktest_task_campers||[]).push([[952],{5700:(s,e,t)=>{t.d(e,{Z:()=>n});const a="Container_container__VVOCq";var c=t(184);const n=s=>{let{children:e}=s;return(0,c.jsx)("div",{className:a,children:e})}},4413:(s,e,t)=>{t.r(e),t.d(e,{default:()=>n});t(2791);var a=t(5700),c=t(184);const n=()=>(0,c.jsx)(a.Z,{})}}]);
+//# sourceMappingURL=favorites-page.f36d535e.chunk.js.map
