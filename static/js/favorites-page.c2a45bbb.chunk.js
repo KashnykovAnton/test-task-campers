@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunktest_task_campers=self.webpackChunktest_task_campers||[]).push([[952],{4413:(e,t,s)=>{s.r(t),s.d(t,{default:()=>h});s(2791);var a=s(5700),c=s(6860),r=s(4420),n=s(5291),u=s(4695),l=s(184);const h=()=>{const e=(0,r.v9)(n._l);return(0,l.jsx)(a.Z,{children:0===e.length?(0,l.jsx)(u.Z,{text:"You don't have any favorite camper yet",customStyle:"messageText"}):(0,l.jsx)(c.Z,{data:e})})}}}]);
+//# sourceMappingURL=favorites-page.c2a45bbb.chunk.js.map
