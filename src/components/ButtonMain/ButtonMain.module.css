@@ -1,4 +1,4 @@
-.button {
+.buttonMain {
   padding: 16px 40px;
   border: none;
   border-radius: 200px;
@@ -10,8 +10,8 @@
   color: var(--white-color);
 }
 
-.button:hover,
-button:focus {
+.buttonMain:hover,
+.buttonMain:focus {
   background-color: var(--red-color-hover);
 }
 

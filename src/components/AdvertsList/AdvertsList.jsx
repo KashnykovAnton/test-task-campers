@@ -2,41 +2,27 @@ import React, { useEffect, useState } from 'react';
 import AdvertsListItem from 'components/AdvertsItem/AdvertsItem';
 import styles from './AdvertsList.module.css';
 import ButtonMain from 'components/ButtonMain/ButtonMain';
-import { fetchAdverts } from 'service/adverts-api';
-import { errorMessage } from 'service/toast';
 import LoaderSpin from 'components/Loader/LoaderSpin';
+import { useSelector, useDispatch } from 'react-redux';
+import { getAdverts } from 'store/adverts/adverts-selectors';
+import { fetchAdvertsFromApi } from 'store/adverts/adverts-thunk';
 
 const AdvertsList = () => {
-  const [adverts, setAdverts] = useState([]);
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
+
+  const dispatch = useDispatch();
+  const adverts = useSelector(getAdverts);
 
   const totalAdverts = 13;
 
   useEffect(() => {
-    const getAdverts = async () => {
-      try {
-        setIsLoading(true);
-        const results = await fetchAdverts(page);
-        if (!results) {
-          return;
-        }
-        setAdverts(prevMovies =>
-          prevMovies.length !== 0 ? [...prevMovies, ...results] : results
-        );
-      } catch (error) {
-        errorMessage(`Something went wrong: ${error.message}`);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    getAdverts();
-  }, [page]);
+    dispatch(fetchAdvertsFromApi(page));
+  }, [dispatch, page]);
+
 
   const handleCLick = () => {
-    console.log('click');
-    setPage(prevPage => prevPage + 1);
-    console.log(page);
+    setPage(page + 1);
   };
 
   return (

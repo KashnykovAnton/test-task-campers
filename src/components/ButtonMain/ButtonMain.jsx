@@ -6,7 +6,7 @@ const ButtonMain = ({ text, actionType = 'button', className }) => {
 
       <button
       type={actionType}
-      className={`${styles.button} ${styles[className]}`}
+      className={`${styles.buttonMain} ${styles[className]}`}
     >
       {text}
     </button>

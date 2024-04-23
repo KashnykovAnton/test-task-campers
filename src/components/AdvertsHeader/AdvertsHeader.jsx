@@ -5,14 +5,14 @@ import Rating from 'components/ModalRatingAndLocation/ModalRatingAndLocation';
 import styles from './AdvertsHeader.module.css';
 import FavoriteButton from 'components/FavoriteButton/FavoriteButton';
 
-const AdvertsHeader = ({ name, price, reviews, location }) => {
+const AdvertsHeader = ({ name, price, reviews, location, id, handleClick }) => {
   return (
     <div>
       <div className={styles.header}>
         <Headline headline={name} />
         <div className={styles.priceWrapper}>
           <Price price={price} />
-          <FavoriteButton />
+          <FavoriteButton id={id} handleClick={handleClick}/>
         </div>
       </div>
       <Rating reviews={reviews} location={location} />

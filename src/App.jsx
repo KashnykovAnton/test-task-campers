@@ -1,7 +1,5 @@
 import { lazy } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import AppBar from './components/AppBar/AppBar';
 import './App.css';
 
@@ -30,7 +28,6 @@ function App() {
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-      <ToastContainer />
     </>
   );
 }

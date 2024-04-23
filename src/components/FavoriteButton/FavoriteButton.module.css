@@ -1,3 +1,16 @@
 .button {
   height: 24px;
 }
+
+.favoriteButton {
+  color: var(--red-color);
+}
+
+.icon {
+  fill: none;
+}
+
+.favoriteIcon {
+  stroke: currentColor;
+  fill: var(--red-color);
+}

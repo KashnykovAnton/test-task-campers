@@ -6,6 +6,9 @@ import AdvertsHeader from 'components/AdvertsHeader/AdvertsHeader';
 import TextComponent from 'components/TextComponent/TextComponent';
 import FeatureBadgeList from 'components/FeatureBadgeList/FeatureBadgeList';
 import styles from './AdvertsItem.module.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { getFavorites } from 'store/adverts/adverts-selectors';
+import { addToFavorites, removeFromFavorites } from 'store/adverts/adverts-slice-favorites';
 
 const AdvertsListItem = ({ data }) => {
   const [showModal, setShowModal] = useState(false);
@@ -26,6 +29,21 @@ const AdvertsListItem = ({ data }) => {
     AC: data.details.AC,
   };
 
+  const dispatch = useDispatch();
+  const favorites = useSelector(getFavorites);
+
+  const handleClick =(id) => {
+    if (isFavorite(id)) {
+      dispatch(removeFromFavorites(data));
+    } else {
+      dispatch(addToFavorites(data));
+    }
+  }
+
+  const isFavorite = id => {
+    return !!favorites.find(item => item._id === id);
+  };
+
   return (
     <div className={styles.listWrapper}>
       <li className={styles.listItem}>
@@ -36,6 +54,8 @@ const AdvertsListItem = ({ data }) => {
             price={data.price}
             reviews={data.reviews}
             location={data.location}
+            id={data._id}
+            handleClick={handleClick}
           />
           <TextComponent
             text={data.description}

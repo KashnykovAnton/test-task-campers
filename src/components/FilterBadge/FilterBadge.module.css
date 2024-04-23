@@ -16,6 +16,5 @@
 
 .badge:hover,
 .badge:focus {
-  background-color: transparent;
   border-color: var(--red-color);
 }

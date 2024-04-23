@@ -17,10 +17,6 @@
   background: var(--white-color);
 }
 
-.react-datepicker button {
-  background-color: transparent;
-}
-
 .react-datepicker-popper[data-placement^='bottom'] .react-datepicker__triangle {
   color: var(--white-color);
   fill: var(--white-color);
