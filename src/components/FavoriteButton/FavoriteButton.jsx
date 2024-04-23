@@ -11,18 +11,24 @@ const FavoriteButton = ({ id, handleClick }) => {
     return !!favorites.find(item => item._id === id);
   };
 
-  console.log(isFavorite(id));
-
   const onFavoriteClick = () => {
     handleClick(id);
   };
 
   return (
-    <button type="button" className={`${styles.button} ${isFavorite(id) ? styles.favoriteButton : ''}`} onClick={onFavoriteClick}>
+    <button
+      type="button"
+      className={`${styles.button} ${
+        isFavorite(id) ? styles.favoriteButton : ''
+      }`}
+      onClick={onFavoriteClick}
+    >
       <svg
         width="24"
         height="24"
-        className={`${styles.icon} ${isFavorite(id) ? styles.favoriteIcon : ''}`}
+        className={`${styles.icon} ${
+          isFavorite(id) ? styles.favoriteIcon : ''
+        }`}
       >
         <use href={`${Icons}#heart`}></use>
       </svg>

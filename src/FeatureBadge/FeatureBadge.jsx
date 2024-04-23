@@ -1,5 +1,4 @@
 import React from 'react';
-// import iconsSprite from './../assets/iconsSprite.svg';
 import adults from './../assets/adults.svg';
 import transmission from './../assets/transmission.svg';
 import engine from './../assets/engine.svg';
@@ -11,8 +10,6 @@ import styles from './FeatureBadge.module.css';
 
 const FeatureBadge = feature => {
   const [key] = Object.keys(feature);
-  console.log(feature);
-  console.log(feature[key]);
 
   const featureText = value => {
     switch (value) {

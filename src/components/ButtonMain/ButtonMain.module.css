@@ -1,4 +1,5 @@
 .buttonMain {
+  width: fit-content;
   padding: 16px 40px;
   border: none;
   border-radius: 200px;

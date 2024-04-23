@@ -22,13 +22,12 @@ const HeroComponent = () => {
     <div className={styles.hero}>
       <h1 className={styles.heroHeading}>Book camper today!</h1>
       <TextComponent text={heroText} customStyle="heroText" />
-      <div
+      <ButtonMain
+        text="Give contacts"
         onClick={() => {
           toggleModal();
         }}
-      >
-        <ButtonMain text="Give contacts" />
-      </div>
+      />
       {showModal && (
         <ModalWindow onClose={toggleModal}>
           <div className={styles.contentWrapper}>

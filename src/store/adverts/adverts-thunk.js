@@ -4,13 +4,25 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 //   fetchContacts,
 //   fetchDeleteContact,
 // } from 'services/contacts-api';
-import { fetchAdverts } from 'service/adverts-api';
+import { fetchAdverts, fetchTotalAdverts } from 'service/adverts-api';
 
 export const fetchAdvertsFromApi = createAsyncThunk(
-  'adverts/fetchAll',
+  'adverts/fetchAdverts',
   async (page, { rejectWithValue }) => {
     try {
       const data = await fetchAdverts(page);
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const fetchTotalAdvertsFromApi = createAsyncThunk(
+  'adverts/fetchTotalAdverts',
+  async (_, { rejectWithValue }) => {
+    try {
+      const data = await fetchTotalAdverts();
       return data;
     } catch (error) {
       return rejectWithValue(error.message);

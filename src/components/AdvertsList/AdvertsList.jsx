@@ -1,43 +1,59 @@
-import React, { useEffect, useState } from 'react';
-import AdvertsListItem from 'components/AdvertsItem/AdvertsItem';
+import React, { useEffect } from 'react';
 import styles from './AdvertsList.module.css';
 import ButtonMain from 'components/ButtonMain/ButtonMain';
 import LoaderSpin from 'components/Loader/LoaderSpin';
 import { useSelector, useDispatch } from 'react-redux';
-import { getAdverts } from 'store/adverts/adverts-selectors';
-import { fetchAdvertsFromApi } from 'store/adverts/adverts-thunk';
+import {
+  getAdverts,
+  getIsLoading,
+  getPage,
+  getTotalItems,
+} from 'store/adverts/adverts-selectors';
+import {
+  fetchAdvertsFromApi,
+  fetchTotalAdvertsFromApi,
+} from 'store/adverts/adverts-thunk';
+import { setPage } from 'store/adverts/adverts-slice-adverts';
+import ListComponent from 'components/ListComponent/ListComponent';
+import TextComponent from 'components/TextComponent/TextComponent';
 
 const AdvertsList = () => {
-  const [page, setPage] = useState(1);
-  const [isLoading, setIsLoading] = useState(false);
-
   const dispatch = useDispatch();
   const adverts = useSelector(getAdverts);
+  const page = useSelector(getPage);
+  const isLoading = useSelector(getIsLoading);
 
-  const totalAdverts = 13;
+  const totalAdverts = useSelector(getTotalItems);
 
   useEffect(() => {
-    dispatch(fetchAdvertsFromApi(page));
-  }, [dispatch, page]);
-
+    if (totalAdverts === 0) {
+      dispatch(fetchTotalAdvertsFromApi());
+    }
+    if (adverts.length < page * 4 && adverts.length < totalAdverts) {
+      dispatch(fetchAdvertsFromApi(page));
+    }
+  }, [dispatch, page, adverts.length, totalAdverts]);
 
   const handleCLick = () => {
-    setPage(page + 1);
+    dispatch(setPage(page + 1));
   };
 
   return (
     <div className={styles.adertsListWrapper}>
-      <ul className={styles.list}>
-        {adverts.map((item, idx) => {
-          return <AdvertsListItem key={idx} data={item} />;
-        })}
-      </ul>
-      {adverts.length < totalAdverts && (
-        <div className={styles.buttonWrapper} onClick={handleCLick}>
-          <ButtonMain text="Load more" className="loadMoreButton" />
-        </div>
-      )}
+      {!isLoading && adverts.length === 0 ? (
+        <TextComponent
+          text="Sorry, we don't have campers for you"
+          customStyle="messageText"
+        />
+      ) : <ListComponent data={adverts} />}
       {isLoading && <LoaderSpin />}
+      {adverts.length < totalAdverts && adverts.length !== 0 && (
+        <ButtonMain
+          text="Load more"
+          className="loadMoreButton"
+          onClick={handleCLick}
+        />
+      )}
     </div>
   );
 };

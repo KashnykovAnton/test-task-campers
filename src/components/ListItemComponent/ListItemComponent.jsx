@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import AdvertModal from 'components/AdvertModal/AdvertModal';
 import ButtonMain from 'components/ButtonMain/ButtonMain';
 import GalleryItem from 'components/GalleryItem/GalleryItem';
-import AdvertsHeader from 'components/AdvertsHeader/AdvertsHeader';
+import ListItemHeader from 'components/ListItemHeader/ListItemHeader';
 import TextComponent from 'components/TextComponent/TextComponent';
 import FeatureBadgeList from 'components/FeatureBadgeList/FeatureBadgeList';
-import styles from './AdvertsItem.module.css';
+import styles from './ListItemComponent.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { getFavorites } from 'store/adverts/adverts-selectors';
 import { addToFavorites, removeFromFavorites } from 'store/adverts/adverts-slice-favorites';
 
-const AdvertsListItem = ({ data }) => {
+const ListItemComponent = ({ data }) => {
   const [showModal, setShowModal] = useState(false);
 
   const toggleModal = () => {
@@ -49,7 +49,7 @@ const AdvertsListItem = ({ data }) => {
       <li className={styles.listItem}>
           <GalleryItem link={data.gallery[0]} name={data.name} />
         <div className={styles.infoWrapper}>
-          <AdvertsHeader
+          <ListItemHeader
             name={data.name}
             price={data.price}
             reviews={data.reviews}
@@ -62,13 +62,11 @@ const AdvertsListItem = ({ data }) => {
             customStyle="shortDescription"
           />
           <FeatureBadgeList data={detailsBadgeObject} />
-          <div
-            onClick={() => {
+
+            <ButtonMain text="Show more" onClick={() => {
               toggleModal();
-            }}
-          >
-            <ButtonMain text="Show more" />
-          </div>
+            }} />
+
         </div>
       </li>
       {showModal && <AdvertModal onClose={toggleModal} data={data} />}
@@ -76,4 +74,4 @@ const AdvertsListItem = ({ data }) => {
   );
 };
 
-export default AdvertsListItem;
+export default ListItemComponent;

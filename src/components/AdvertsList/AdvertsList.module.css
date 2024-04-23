@@ -1,17 +1,7 @@
 .adertsListWrapper {
-    display: grid;
-    margin-bottom: 50px;
-}
-
-.list {
   display: flex;
-  gap: 32px;
   flex-direction: column;
-  margin-bottom: 50px;
-}
-
-.buttonWrapper {
-  display: flex;
   align-items: center;
-  justify-content: center;
+  width: 100%;
+  margin-bottom: 50px;
 }

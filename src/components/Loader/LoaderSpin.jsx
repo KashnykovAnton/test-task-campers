@@ -3,14 +3,15 @@ import styles from './LoaderSpin.module.css';
 
 function LoaderSpin() {
   return (
-    <div className={styles.SpinnerWrapper}>
+    <div className={styles.backdrop}>
       <Oval
         visible={true}
         height="80"
         width="80"
-        color="var(--loader-color)"
-        secondaryColor="var(--first-color)"
+        color="var(--red-color)"
+        secondaryColor="var(--gray-color)"
         ariaLabel="oval-loading"
+        wrapperClass={styles.spinnerWrapper}
       />
     </div>
   );

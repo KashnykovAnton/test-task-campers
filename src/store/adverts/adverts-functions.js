@@ -3,6 +3,11 @@ export const handleFetchAdverts = (state, { payload }) => {
   state.isLoading = false;
 };
 
+export const handleFetchTotalAdverts = (state, { payload }) => {
+  state.totalItems = payload;
+  state.isLoading = false;
+};
+
 // export const handleAddContact = (state, { payload }) => {
 //   state.items = [...state.items, payload];
 //   state.isLoading = false;

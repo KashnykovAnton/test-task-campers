@@ -2,10 +2,10 @@ import React from 'react';
 import Headline from 'components/Headline/Headline';
 import Price from 'components/Price/Price';
 import Rating from 'components/ModalRatingAndLocation/ModalRatingAndLocation';
-import styles from './AdvertsHeader.module.css';
+import styles from './ListItemHeader.module.css';
 import FavoriteButton from 'components/FavoriteButton/FavoriteButton';
 
-const AdvertsHeader = ({ name, price, reviews, location, id, handleClick }) => {
+const ListItemHeader = ({ name, price, reviews, location, id, handleClick }) => {
   return (
     <div>
       <div className={styles.header}>
@@ -20,4 +20,4 @@ const AdvertsHeader = ({ name, price, reviews, location, id, handleClick }) => {
   );
 };
 
-export default AdvertsHeader;
+export default ListItemHeader;
