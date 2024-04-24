@@ -14,7 +14,10 @@
   border: 1px solid var(--border-tile);
 }
 
-.badge:hover,
-.badge:focus {
+.badge:hover {
+  background-color: var(--scrollbar-color);
+}
+
+.active {
   border-color: var(--red-color);
 }

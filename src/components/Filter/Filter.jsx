@@ -8,6 +8,7 @@ const Filter = () => {
   const vehicleEquipment = {
     AC: 'AC',
     transmission: 'Automatic',
+    engine: 'Petrol',
     kitchen: 'Kitchen',
     TV: 'TV',
     shower: 'Shower/WC',

@@ -1,13 +1,32 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const filterSlice = createSlice({
-  name: 'filter',
-  initialState: '',
+const initialState = {
+  AC: false,
+  transmission: [],
+  engine: [],
+  TV: false,
+  kitchen: false,
+  shower: false,
+};
+
+const filtersSlice = createSlice({
+  name: 'filters',
+  initialState,
   reducers: {
-    filterContact: (_, { payload }) => payload,
+    toggleBooleanFilter: (state, { payload }) => {
+      state[payload] = !state[payload];
+    },
+    toggleStringFilter: (state, action) => {
+      const { filterName, value } = action.payload;
+      if (state[filterName].includes(value)) {
+        const index = state[filterName].indexOf(value);
+        state[filterName].splice(index, 1);
+        return;
+      }
+      state[filterName].push(value);
+    },
   },
 });
 
-export const filterSliceReducer = filterSlice.reducer;
-export const { filterContact } = filterSlice.actions;
-
+export const { toggleBooleanFilter, toggleStringFilter } = filtersSlice.actions;
+export const filterSliceReducer = filtersSlice.reducer;

@@ -1,7 +1,7 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { advertsSliceReducer } from './adverts/adverts-slice-adverts';
 import { favoritesSliceReducer } from './adverts/adverts-slice-favorites';
-
+import { filterSliceReducer } from './adverts/adverts-slice-filter';
 import {
   persistStore,
   persistReducer,
@@ -29,7 +29,7 @@ const middleware = getDefaultMiddleware =>
 const combinedReducers = combineReducers({
   adverts: advertsSliceReducer,
   favorites: favoritesSliceReducer,
-  // filter: filterSliceReducer,
+  filters: filterSliceReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, combinedReducers);

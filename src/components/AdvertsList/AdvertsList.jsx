@@ -5,6 +5,7 @@ import LoaderSpin from 'components/Loader/LoaderSpin';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   getAdverts,
+  getFilteredItems,
   getIsLoading,
   getPage,
   getTotalItems,
@@ -23,6 +24,9 @@ const AdvertsList = () => {
   const page = useSelector(getPage);
   const isLoading = useSelector(getIsLoading);
 
+  const filteredAdverts = useSelector(getFilteredItems)
+  console.log("filteredAdverts: ", filteredAdverts);
+
   const totalAdverts = useSelector(getTotalItems);
 
   useEffect(() => {
@@ -40,16 +44,16 @@ const AdvertsList = () => {
 
   return (
     <div className={styles.adertsListWrapper}>
-      {!isLoading && adverts.length === 0 ? (
+      {!isLoading && filteredAdverts.length === 0 ? (
         <TextComponent
           text="Sorry, we don't have campers for you"
           customStyle="messageText"
         />
       ) : (
-        <ListComponent data={adverts} />
+        <ListComponent data={filteredAdverts} />
       )}
       {isLoading && <LoaderSpin />}
-      {adverts.length < totalAdverts && adverts.length !== 0 && (
+      {filteredAdverts.length < totalAdverts && filteredAdverts.length !== 0 && (
         <ButtonMain
           text="Load more"
           className="loadMoreButton"
