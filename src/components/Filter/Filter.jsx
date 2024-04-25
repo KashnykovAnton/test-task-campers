@@ -23,7 +23,7 @@ const Filter = () => {
     <div className={styles.filterSection}>
       <div className={styles.wrapper}>
         <p className={styles.filterText}>Location</p>
-          <Geolocation/>
+        <Geolocation />
       </div>
       <div className={styles.wrapper}>
         <p className={`${styles.filterText} ${styles.filterTextWithMargin}`}>

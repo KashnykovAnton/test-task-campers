@@ -8,12 +8,10 @@ import styles from './Geolocation.module.css';
 import { getLocation } from 'store/adverts/adverts-selectors';
 
 const Geolocation = () => {
-  const [city, setCity] = useState('');
-  const [country, setCountry] = useState('');
+  const dispatch = useDispatch();
+
   const [userLocation, setUserLocation] = useState('');
   const [isEditing, setIsEditing] = useState(false);
-
-  const dispatch = useDispatch();
 
   const locationFromState = useSelector(getLocation);
   const [cityFromState, countryFromState] = locationFromState
@@ -21,18 +19,11 @@ const Geolocation = () => {
     .map(item => item.trim())
     .reverse();
 
-  useEffect(() => {
-    setUserLocation(`${city}, ${country}`);
-    // dispatch(setLocation(`${country}, ${city}`));
-  }, [city, country, dispatch]);
+  const checkValue = value => value === undefined || value.trim().length === 0;
 
   useEffect(() => {
-    if (
-      (cityFromState !== '' && cityFromState !== undefined) ||
-      (countryFromState !== '' && countryFromState !== undefined)
-    ) {
-      setCity(cityFromState);
-      setCountry(countryFromState);
+    if (!checkValue(cityFromState) || !checkValue(countryFromState)) {
+      setUserLocation(`${cityFromState}, ${countryFromState}`);
       return;
     }
     if ('geolocation' in navigator) {
@@ -48,29 +39,27 @@ const Geolocation = () => {
         if (!results) {
           return;
         }
-        setCity(results.address.city);
-        setCountry(results.address.country);
+        setUserLocation(`${results.address.city}, ${results.address.country}`);
       } catch (error) {
         console.log(`Something went wrong: ${error.message}`);
       }
     };
-  }, [city, cityFromState, country, countryFromState]);
+  }, [cityFromState, countryFromState]);
 
   const handleInputChange = e => {
     setUserLocation(e.target.value);
   };
 
   const handleSearch = () => {
-    if (!userLocation.trim()) {
-      return alert('Please enter a valid location');
+    const [newCity = '', newCountry = ''] = userLocation
+      .split(',')
+      .map(item => item.trim());
+    if (newCity && newCountry) {
+      dispatch(setLocation(`${newCountry}, ${newCity}`));
+    } else {
+      alert('Please enter a valid location in the format "City, Country"');
     }
-    let [newCity, newCountry] = userLocation.split(', ');
-    newCity = newCity === undefined ? '' : newCity;
-    newCountry = newCountry === undefined ? '' : newCountry;
-    setCity(newCity);
-    setCountry(newCountry);
     setIsEditing(false);
-    dispatch(setLocation(`${newCountry}, ${newCity}`));
   };
 
   const handleEdit = () => {
@@ -86,24 +75,16 @@ const Geolocation = () => {
         <input
           className={styles.locationInput}
           type="text"
-          value={isEditing ? userLocation : `${city}, ${country}`}
+          value={userLocation}
           onChange={handleInputChange}
           placeholder="City, Country"
         />
       </div>
-      {isEditing ? (
-        <ButtonMain
-          text="Search"
-          className="searchLocationButton"
-          onClick={handleSearch}
-        />
-      ) : (
-        <ButtonMain
-          text="Edit"
-          className="searchLocationButton"
-          onClick={handleEdit}
-        />
-      )}
+      <ButtonMain
+        text={isEditing ? 'Search' : 'Edit'}
+        className="searchLocationButton"
+        onClick={isEditing ? handleSearch : handleEdit}
+      />
     </>
   );
 };
