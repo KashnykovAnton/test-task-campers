@@ -84,6 +84,7 @@ const Geolocation = () => {
           <IconPin />
         </div>
         <input
+          className={styles.locationInput}
           type="text"
           value={isEditing ? userLocation : `${city}, ${country}`}
           onChange={handleInputChange}
