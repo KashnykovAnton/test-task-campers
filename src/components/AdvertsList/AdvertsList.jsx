@@ -4,7 +4,7 @@ import ButtonMain from 'components/ButtonMain/ButtonMain';
 import LoaderSpin from 'components/Loader/LoaderSpin';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  getAdverts,
+  getItems,
   getFilteredItems,
   getIsLoading,
   getPage,
@@ -20,13 +20,10 @@ import TextComponent from 'components/TextComponent/TextComponent';
 
 const AdvertsList = () => {
   const dispatch = useDispatch();
-  const adverts = useSelector(getAdverts);
+  const adverts = useSelector(getItems);
   const page = useSelector(getPage);
   const isLoading = useSelector(getIsLoading);
-
-  const filteredAdverts = useSelector(getFilteredItems)
-  console.log("filteredAdverts: ", filteredAdverts);
-
+  const filteredAdverts = useSelector(getFilteredItems);
   const totalAdverts = useSelector(getTotalItems);
 
   useEffect(() => {
@@ -46,14 +43,14 @@ const AdvertsList = () => {
     <div className={styles.adertsListWrapper}>
       {!isLoading && filteredAdverts.length === 0 ? (
         <TextComponent
-          text="Sorry, we don't have campers for you"
+          text="Sorry, but with your filter settings we don't have campers for you on this page. Try to load more or change filters."
           customStyle="messageText"
         />
       ) : (
         <ListComponent data={filteredAdverts} />
       )}
       {isLoading && <LoaderSpin />}
-      {filteredAdverts.length < totalAdverts && filteredAdverts.length !== 0 && (
+      {adverts.length < totalAdverts && adverts.length !== 0 && (
         <ButtonMain
           text="Load more"
           className="loadMoreButton"

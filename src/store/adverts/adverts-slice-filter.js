@@ -1,18 +1,23 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
+  location: '',
   AC: false,
   transmission: [],
   engine: [],
   TV: false,
   kitchen: false,
   shower: false,
+  vehicleType: [],
 };
 
 const filtersSlice = createSlice({
   name: 'filters',
   initialState,
   reducers: {
+    setLocation: (state, { payload }) => {
+      state.location = payload;
+    },
     toggleBooleanFilter: (state, { payload }) => {
       state[payload] = !state[payload];
     },
@@ -25,8 +30,17 @@ const filtersSlice = createSlice({
       }
       state[filterName].push(value);
     },
+    toggleFormFilter: (state, action) => {
+      const formType = action.payload;
+      const index = state.vehicleType.indexOf(formType);
+      if (index === -1) {
+        state.vehicleType.push(formType);
+      } else {
+        state.vehicleType.splice(index, 1);
+      }
+    },
   },
 });
 
-export const { toggleBooleanFilter, toggleStringFilter } = filtersSlice.actions;
+export const { setLocation, toggleBooleanFilter, toggleStringFilter, toggleFormFilter } = filtersSlice.actions;
 export const filterSliceReducer = filtersSlice.reducer;

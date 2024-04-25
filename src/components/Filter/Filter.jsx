@@ -2,7 +2,6 @@ import React from 'react';
 import Geolocation from 'components/Geolocation/Geolocation';
 import styles from './Filter.module.css';
 import FilterBadgeList from 'components/FilterBadgeList/FilterBadgeList';
-import ButtonMain from 'components/ButtonMain/ButtonMain';
 
 const Filter = () => {
   const vehicleEquipment = {
@@ -15,8 +14,8 @@ const Filter = () => {
   };
 
   const vehicleType = {
-    van: 'Van',
-    fully: 'Fully Integrated',
+    panelTruck: 'Van',
+    fullyIntegrated: 'Fully Integrated',
     alcove: 'Alcove',
   };
 
@@ -24,9 +23,7 @@ const Filter = () => {
     <div className={styles.filterSection}>
       <div className={styles.wrapper}>
         <p className={styles.filterText}>Location</p>
-        <div className={styles.location}>
           <Geolocation/>
-        </div>
       </div>
       <div className={styles.wrapper}>
         <p className={`${styles.filterText} ${styles.filterTextWithMargin}`}>
@@ -39,7 +36,6 @@ const Filter = () => {
         <h3 className={styles.filterHeadline}>Vehicle type</h3>
         <FilterBadgeList data={vehicleType} camper={true} />
       </div>
-      <ButtonMain text='Search' className='searchButton'/>
     </div>
   );
 };

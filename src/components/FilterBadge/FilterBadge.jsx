@@ -4,6 +4,7 @@ import Icons from '../../assets/icons-sprite.svg';
 import styles from './FilterBadge.module.css';
 import {
   toggleBooleanFilter,
+  toggleFormFilter,
   toggleStringFilter,
 } from 'store/adverts/adverts-slice-filter';
 import { useDispatch, useSelector } from 'react-redux';
@@ -11,9 +12,6 @@ import { getFilters } from 'store/adverts/adverts-selectors';
 
 const FilterBadge = ({ badgeKey, badgeValue, camper = false }) => {
   const renderAcCondition = badgeKey === 'AC';
-
-  // console.log('badgeKey: ', badgeKey);
-  // console.log('badgeValue: ', badgeValue);
 
   const dispatch = useDispatch();
   const filters = useSelector(getFilters);
@@ -24,10 +22,25 @@ const FilterBadge = ({ badgeKey, badgeValue, camper = false }) => {
       dispatch(toggleStringFilter({ filterName, value }));
       return;
     }
+    if (
+      filterName === 'panelTruck' ||
+      filterName === 'fullyIntegrated' ||
+      filterName === 'alcove'
+    ) {
+      dispatch(toggleFormFilter(filterName));
+      return;
+    }
     dispatch(toggleBooleanFilter(filterName));
   };
 
   const checkFilterValue = filterName => {
+    if (
+      filterName === 'panelTruck' ||
+      filterName === 'fullyIntegrated' ||
+      filterName === 'alcove'
+    ) {
+      return filters.vehicleType?.includes(filterName);
+    }
     if (Array.isArray(filters[filterName])) {
       return filters[filterName].includes(badgeValue.toLowerCase());
     }

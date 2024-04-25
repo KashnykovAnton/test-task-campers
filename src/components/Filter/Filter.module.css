@@ -14,14 +14,6 @@
   color: var(--border-tile);
 }
 
-.location {
-  padding: 18px;
-  width: 360px;
-  height: 56px;
-  border-radius: 10px;
-  background: var(--light-color);
-}
-
 .filterTextWithMargin {
   margin-bottom: 14px;
 }
