@@ -1,37 +1,37 @@
 {
   "files": {
     "main.css": "/test-task-campers/static/css/main.1d2be690.css",
-    "main.js": "/test-task-campers/static/js/main.8a91c4f5.js",
-    "home-page.css": "/test-task-campers/static/css/home-page.4611d406.chunk.css",
+    "main.js": "/test-task-campers/static/js/main.7927c34f.js",
+    "home-page.css": "/test-task-campers/static/css/home-page.5082244b.chunk.css",
     "home-page.js": "/test-task-campers/static/js/home-page.3b5ee16a.chunk.js",
-    "catalog-page.css": "/test-task-campers/static/css/catalog-page.1e1f2bca.chunk.css",
-    "catalog-page.js": "/test-task-campers/static/js/catalog-page.58720f07.chunk.js",
-    "favorites-page.css": "/test-task-campers/static/css/favorites-page.ca3c3b41.chunk.css",
+    "catalog-page.css": "/test-task-campers/static/css/catalog-page.e9773e92.chunk.css",
+    "catalog-page.js": "/test-task-campers/static/js/catalog-page.dc7bc6fe.chunk.js",
+    "favorites-page.css": "/test-task-campers/static/css/favorites-page.fc20c864.chunk.css",
     "favorites-page.js": "/test-task-campers/static/js/favorites-page.c2a45bbb.chunk.js",
     "static/css/44.8e3ac561.chunk.css": "/test-task-campers/static/css/44.8e3ac561.chunk.css",
     "static/js/44.745e4ea7.chunk.js": "/test-task-campers/static/js/44.745e4ea7.chunk.js",
-    "static/js/708.52772b50.chunk.js": "/test-task-campers/static/js/708.52772b50.chunk.js",
-    "static/js/820.5e2d0584.chunk.js": "/test-task-campers/static/js/820.5e2d0584.chunk.js",
+    "static/js/708.c6ebe4e4.chunk.js": "/test-task-campers/static/js/708.c6ebe4e4.chunk.js",
+    "static/js/820.da761089.chunk.js": "/test-task-campers/static/js/820.da761089.chunk.js",
     "static/media/background.jpg": "/test-task-campers/static/media/background.a84142da78d2e8dd4d52.jpg",
-    "static/media/icons-sprite.svg": "/test-task-campers/static/media/icons-sprite.32adc9c1222041b20c96a051e9fc0ab4.svg",
+    "static/media/icons-sprite.svg": "/test-task-campers/static/media/icons-sprite.da121944945c4375389443634c96b86f.svg",
     "static/media/AC-big.svg": "/test-task-campers/static/media/AC-big.3fa8d876573e81d0e423faf46aa4efed.svg",
     "static/media/AC.svg": "/test-task-campers/static/media/AC.a62c3eda070a42c785e7a4ae57fd7308.svg",
     "index.html": "/test-task-campers/index.html",
     "main.1d2be690.css.map": "/test-task-campers/static/css/main.1d2be690.css.map",
-    "main.8a91c4f5.js.map": "/test-task-campers/static/js/main.8a91c4f5.js.map",
-    "home-page.4611d406.chunk.css.map": "/test-task-campers/static/css/home-page.4611d406.chunk.css.map",
+    "main.7927c34f.js.map": "/test-task-campers/static/js/main.7927c34f.js.map",
+    "home-page.5082244b.chunk.css.map": "/test-task-campers/static/css/home-page.5082244b.chunk.css.map",
     "home-page.3b5ee16a.chunk.js.map": "/test-task-campers/static/js/home-page.3b5ee16a.chunk.js.map",
-    "catalog-page.1e1f2bca.chunk.css.map": "/test-task-campers/static/css/catalog-page.1e1f2bca.chunk.css.map",
-    "catalog-page.58720f07.chunk.js.map": "/test-task-campers/static/js/catalog-page.58720f07.chunk.js.map",
-    "favorites-page.ca3c3b41.chunk.css.map": "/test-task-campers/static/css/favorites-page.ca3c3b41.chunk.css.map",
+    "catalog-page.e9773e92.chunk.css.map": "/test-task-campers/static/css/catalog-page.e9773e92.chunk.css.map",
+    "catalog-page.dc7bc6fe.chunk.js.map": "/test-task-campers/static/js/catalog-page.dc7bc6fe.chunk.js.map",
+    "favorites-page.fc20c864.chunk.css.map": "/test-task-campers/static/css/favorites-page.fc20c864.chunk.css.map",
     "favorites-page.c2a45bbb.chunk.js.map": "/test-task-campers/static/js/favorites-page.c2a45bbb.chunk.js.map",
     "44.8e3ac561.chunk.css.map": "/test-task-campers/static/css/44.8e3ac561.chunk.css.map",
     "44.745e4ea7.chunk.js.map": "/test-task-campers/static/js/44.745e4ea7.chunk.js.map",
-    "708.52772b50.chunk.js.map": "/test-task-campers/static/js/708.52772b50.chunk.js.map",
-    "820.5e2d0584.chunk.js.map": "/test-task-campers/static/js/820.5e2d0584.chunk.js.map"
+    "708.c6ebe4e4.chunk.js.map": "/test-task-campers/static/js/708.c6ebe4e4.chunk.js.map",
+    "820.da761089.chunk.js.map": "/test-task-campers/static/js/820.da761089.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1d2be690.css",
-    "static/js/main.8a91c4f5.js"
+    "static/js/main.7927c34f.js"
   ]
 }
